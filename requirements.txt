@@ -1,4 +1,6 @@
 flask
 flask_pymongo
 pymongo
+bson
+flask_restful
 
