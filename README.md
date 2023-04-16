@@ -1,4 +1,4 @@
-This a FLask app that connects with Atlas MongoDB to perform all CRUD using Operations.
+This a User Management API that performs all the CRUD (Create,Read,Update,Delete) Operations using Flask and MongoDB.
 
 To set up the application
 
@@ -8,4 +8,4 @@ To set up the application
 
 3) Now use "docker-compose up" command in the terminal to create a docker container.
 
-Now the app is up and running, it can be tested using Postman, Insomnia etc
+Now the app is up and running.
