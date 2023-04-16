@@ -1,11 +1,11 @@
-# Corider_application_project
+This a FLask app that connects with Atlas MongoDB to perform all CRUD using Operations.
 
-THIS IS A BASIC FLASK APP THAT PERFORMS ALL CRUD OPERATIONS USING MONGODB ATLAS
+To set up the application
 
-TO SET UP THE APPLICATION
+1) Clone the github repository
 
-1)CLONE THE REPOSITARY
+2) Open vs code and install docker extension for vs code.
 
-2)INSTALL ALL THE NECESSARY DEPENDENCIES FROM requirements.txt
+3) Now use "docker-compose up" command in the terminal to create a docker container.
 
-3)THEN EXECUTE THE app.py FILE
+Now the app is up and running, it can be tested using Postman, Insomnia etc
