@@ -1,18 +1,8 @@
 version: '3'
-
 services:
-  web:
+  app:
     build: .
     ports:
       - "5000:5000"
-      - "8080:80"
-      - "127.0.0.1:5000:5000"
     environment:
       MONGO_URI: mongodb+srv://NikhilKrishna:UaUcC7NE1SeP2qJB@cluster0.arkj1sx.mongodb.net/test?retryWrites=true&w=majority
-    depends_on:
-      - mongo
-
-  mongo:
-     image: mongo   
-
-
