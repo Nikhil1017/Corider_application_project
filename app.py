@@ -30,17 +30,35 @@ class User(Resource):
             user['_id'] = str(user['_id'])
             userlist.append(user)
         return {'users': userlist}, 200
+    
+class id_user(Resource):
+    def __init__(self):
+        self.reqparse = reqparse.RequestParser()
+        self.reqparse.add_argument('id', type=str, required=True)
+        self.reqparse.add_argument('name', type=str, required=True)
+        self.reqparse.add_argument('email', type=str, required=True)
+        self.reqparse.add_argument('password', type=str, required=True)
+        super(id_user, self).__init__()
 
+    def get(self, userid):
+        user = mongo.db.users.find_one({'_id': ObjectId(userid)})
+        if user:
+            user['_id'] = str(user['_id'])
+            return {'user': user}, 200
+        else:
+            return {'message': 'user not found'}, 404
+     
     def put(self, userid):
         args = self.reqparse.parse_args()
         mongo.db.users.update_one({'_id': ObjectId(userid)}, {'$set': args})
-        return {'message': 'user details updated'}, 200
+        return {'message': 'user details updated'}, 200 
 
     def delete(self, userid):
         mongo.db.users.delete_one({'_id': ObjectId(userid)})
-        return {'message': 'user has been deleted successfully'}, 200
+        return {'message': 'user has been deleted successfully'}, 200   
     
-api.add_resource(User, '/users', '/users/<userid>')  
+api.add_resource(User, '/users')  
+api.add_resource(id_user, '/users/<userid>')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True)        
