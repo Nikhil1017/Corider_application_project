@@ -1,4 +1,4 @@
-This a User Management API that performs all the CRUD (Create,Read,Update,Delete) Operations using Flask and MongoDB.
+This is a User Management API that performs all the CRUD (Create,Read,Update,Delete) Operations using Flask and MongoDB.
 
 To set up the application
 
